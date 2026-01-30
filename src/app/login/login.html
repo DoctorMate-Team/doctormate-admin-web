@@ -1,0 +1,53 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- Left Section -->
+    <div class="left-section">
+      <div class="illustration-content">
+        <div class="illustration">
+          <img src="/login-illustration.png" alt="Admin Illustration" class="illustration-img" />
+        </div>
+        <div class="tagline">
+          Control the system.Protect the future
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="form-container">
+        <div class="header">
+          <div class="shield-icon">
+            <img src="/shield-icon.png" alt="Shield Icon" class="shield-img" />
+          </div>
+          <h1>Admin Dashboard</h1>
+          <p class="subtitle">Sign in to access the control panel</p>
+        </div>
+
+        <form class="login-form" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" [(ngModel)]="email" class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password"
+              placeholder="Enter your password" class="form-input" />
+          </div>
+
+          <button type="submit" class="login-btn">
+            Login
+          </button>
+        </form>
+
+        <div class="security-note">
+          <svg viewBox="0 0 16 16" fill="currentColor" class="lock-icon">
+            <rect x="4" y="8" width="8" height="6" rx="1" />
+            <path d="M5 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.5" />
+          </svg>
+          Secure admin access only
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
