@@ -1,0 +1,475 @@
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f1f5f9;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 260px;
+    background-color: #52AC8C;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo-section {
+    padding: 0 24px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #52AC8C;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 16px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-item.active {
+    background-color: white;
+    color: #52AC8C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 16px 16px;
+}
+
+.user-profile-sidebar {
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 8px;
+}
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info-sidebar .user-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.user-info-sidebar .user-email {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    min-width: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: white;
+    border-radius: 16px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.header-left h1 {
+    font-size: 22px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.user-role {
+    font-size: 12px;
+    color: #52AC8C;
+    font-weight: 500;
+}
+
+.avatar img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+/* Filters Card */
+.filters-card {
+    background-color: white;
+    border-radius: 50px;
+    padding: 12px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.filters-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-label {
+    font-weight: 600;
+    color: #334155;
+    font-size: 16px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #475569;
+}
+
+.filter-btn.active {
+    background-color: #52AC8C;
+    color: white;
+    border-color: #52AC8C;
+}
+
+.filter-btn .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.filter-btn.error .dot {
+    background-color: #ef4444;
+}
+
+.filter-btn.warning .dot {
+    background-color: #f59e0b;
+}
+
+.filter-btn.info .dot {
+    background-color: #3b82f6;
+}
+
+.filters-right {
+    display: flex;
+    gap: 12px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    transition: all 0.2s;
+}
+
+.time-btn {
+    background-color: #52AC8C;
+    color: white;
+}
+
+.filter-btn-main {
+    background-color: #52AC8C;
+    color: white;
+}
+
+/* Table Section */
+.table-container {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.logs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.logs-table thead {
+    background-color: #52AC8C;
+    color: white;
+}
+
+.logs-table th {
+    text-align: left;
+    padding: 15px 24px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.logs-table th.text-right {
+    text-align: right;
+}
+
+.logs-table td {
+    padding: 12px 24px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: #444;
+    vertical-align: middle;
+}
+
+.logs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.log-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 80px;
+}
+
+.log-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.log-badge.error {
+    color: #f55252;
+    border: 1.5px solid #f55252;
+}
+
+.log-badge.error .dot {
+    background-color: #f55252;
+}
+
+.log-badge.warning {
+    color: #f5b252;
+    border: 1.5px solid #f5b252;
+}
+
+.log-badge.warning .dot {
+    background-color: #f5b252;
+}
+
+.log-badge.info {
+    color: #528ff5;
+    border: 1.5px solid #528ff5;
+}
+
+.log-badge.info .dot {
+    background-color: #528ff5;
+}
+
+/* Table Footer */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-top: 1px solid #eee;
+    background-color: white;
+}
+
+.table-footer span {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+}
+
+.pagination {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-page {
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+/* Previous button */
+.btn-page:first-child {
+    background-color: #e0e0e0;
+    color: #333;
+    border: 1px solid #bcbcbc;
+}
+
+/* Number buttons */
+.btn-page:not(:first-child):not(:last-child) {
+    background-color: white;
+    color: #334155;
+    border: 1px solid #52AC8C;
+    min-width: 40px;
+}
+
+.btn-page.active {
+    box-shadow: 0 0 0 1px #52AC8C;
+}
+
+/* Next button */
+.btn-page:last-child {
+    background-color: #52AC8C;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+}
+
+.btn-page:hover:not(:disabled) {
+    opacity: 0.9;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    color: #555;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+    margin: 30px -24px -24px -24px;
+}
+
+.footer-copy {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    text-transform: uppercase;
+}

@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #56b092;
+    color: #52AC8C;
 }
 
 .logo-text {
@@ -48,6 +48,7 @@
     flex-direction: column;
     gap: 8px;
     padding: 0 16px;
+    flex: 1;
 }
 
 .nav-item {
@@ -69,14 +70,64 @@
 
 .nav-item.active {
     background-color: white;
-    color: #56b092;
+    color: #52AC8C;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 
 .nav-icon {
     width: 20px;
     height: 20px;
 }
+
+.sidebar-bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 16px 16px;
+}
+
+.user-profile-sidebar {
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 8px;
+}
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info-sidebar {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.user-info-sidebar .user-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-info-sidebar .user-email {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 /* Main Content Styles */
 .main-content {
@@ -521,4 +572,55 @@
 
 .status-ready {
     background-color: #1e3a8a;
+}
+
+/* Skeleton Loaders */
+.skeleton {
+    background: #e2e8f0;
+    background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.skeleton-text.short {
+    width: 50%;
+}
+
+.skeleton-text-lg {
+    height: 24px;
+    width: 60%;
+}
+
+.skeleton-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+}
+
+.skeleton-stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.skeleton-table-row {
+    height: 40px;
+    margin-bottom: 12px;
 }

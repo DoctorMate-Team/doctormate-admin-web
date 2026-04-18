@@ -1,0 +1,188 @@
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-section">
+            <div class="logo-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" />
+                </svg>
+            </div>
+            <span class="logo-text">DoctorMate</span>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-item" routerLink="/overview-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Overview</span>
+            </div>
+            <div class="nav-item" routerLink="/user-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                <span>User</span>
+            </div>
+
+            <div class="nav-item" routerLink="/payment-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <span>Payment</span>
+            </div>
+            <div class="nav-item active" routerLink="/logs-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span>Logs</span>
+            </div>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="nav-item logout" routerLink="/login">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Logout</span>
+            </div>
+            <div class="nav-item settings">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+                <span>Settings</span>
+            </div>
+            <div class="user-profile-sidebar">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="avatar-img">
+                <div class="user-info-sidebar">
+                    <span class="user-name">Hazem Wagih</span>
+                    <span class="user-email">emilly.watson@example.com</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="header">
+            <div class="header-left">
+                <h1>System Logs</h1>
+            </div>
+            <div class="header-right">
+                <div class="icon-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </div>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">Admin User</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                    <div class="avatar">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Admin">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Filters Section -->
+        <div class="filters-card">
+            <div class="filters-left">
+                <span class="filter-label">Quick Filter:</span>
+                <div class="filter-buttons">
+                    <button class="filter-btn active">All Logs</button>
+                    <button class="filter-btn error"><span class="dot"></span> Errors</button>
+                    <button class="filter-btn warning"><span class="dot"></span> Warnings</button>
+                    <button class="filter-btn info"><span class="dot"></span> Info</button>
+                </div>
+            </div>
+            <div class="filters-right">
+                <button class="action-btn time-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Last 24 Hours
+                </button>
+                <button class="action-btn filter-btn-main">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    Filter
+                </button>
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="table-container">
+            <table class="logs-table">
+                <thead>
+                    <tr>
+                        <th width="12%">Type</th>
+                        <th width="15%">Module</th>
+                        <th width="58%">Message</th>
+                        <th width="15%" class="text-right">DATE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (loading()) {
+                        <tr><td colspan="4" class="text-center">Loading logs...</td></tr>
+                    } @else if (logs().length === 0) {
+                        <tr><td colspan="4" class="text-center">No logs found.</td></tr>
+                    } @else {
+                        @for (log of logs(); track log.id) {
+                            <tr>
+                                <td>
+                                    <span class="log-badge" [ngClass]="log.level">
+                                        <span class="dot"></span> {{ log.level | titlecase }}
+                                    </span>
+                                </td>
+                                <td>{{ log.module }}</td>
+                                <td>{{ log.message }}</td>
+                                <td class="text-right">{{ log.createdAt | date:'mediumDate' }}</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="table-footer">
+                <span>Showing {{ (currentPage() - 1) * pageSize() + 1 }} to {{ (currentPage() * pageSize()) > totalCount() ? totalCount() : (currentPage() * pageSize()) }} of {{ totalCount() }} logs</span>
+                <div class="pagination">
+                    <button class="btn-page" [disabled]="currentPage() === 1" (click)="goToPage(currentPage() - 1)">Previous</button>
+                    
+                    @for (page of pagesArray(); track page) {
+                        <button class="btn-page" [class.active]="currentPage() === page" (click)="goToPage(page)">{{ page }}</button>
+                    }
+                    
+                    <button class="btn-page" [disabled]="currentPage() === totalPages()" (click)="goToPage(currentPage() + 1)">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-copy">2024 HEALTHCARE ADMIN PORTAL | V 2.4.0</div>
+            <div class="footer-links">
+                <a href="#">DOCUMENTATIOTIN</a>
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">SYSTEM HEALTH STATUS</a>
+            </div>
+        </footer>
+    </main>
+</div>

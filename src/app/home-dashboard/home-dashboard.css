@@ -1,0 +1,417 @@
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #e5e7eb;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    background-color: #52AC8C;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo-section {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 16px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #52AC8C;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 12px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    justify-content: flex-start;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-item-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.lock-icon {
+    opacity: 0.7;
+}
+
+.nav-item span {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.logout {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 24px 32px;
+    gap: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-left h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 4px 0;
+}
+
+.header-left .subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #f3f4f6;
+    border-radius: 20px;
+    padding: 8px 16px;
+    width: 240px;
+    gap: 8px;
+}
+
+.search-container input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    color: #4b5563;
+    width: 100%;
+}
+
+.user-profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Form */
+.form-container {
+    background-color: #e5e7eb;
+    /* Matches main bg, but individual inputs are white? Image shows stacked cards maybe */
+    /* Wait, re-evaluating image. It looks like white cards separated by transparent gaps? or one card? */
+    /* It looks like:
+       - Header is white.
+       - "Specialty Name" Input is white. Label is outside? No, "Specialty Name *" is label.
+       - "Description" is white textarea.
+       - "Specialty Icon" is white box.
+       - "Specialty Status" is white box.
+       - Buttons are at bottom.
+       The background between them is gray.
+    */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Override form container to be invisible / transparent so we can have cards */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+}
+
+.required {
+    color: #dc2626;
+}
+
+.optional {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.form-input,
+.form-textarea {
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    /* Actually image shows white box with maybe no border or light border */
+    border-radius: 8px;
+    background-color: white;
+    font-size: 14px;
+    color: #374151;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    /* Slight shadow for card effect if desired */
+    /* To match image: input itself IS the card */
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.error-text {
+    font-size: 12px;
+    color: #9ca3af;
+    /* Image shows "This field is required" in gray/small text under input */
+    margin: 0;
+}
+
+/* Icon Upload Area */
+.icon-upload-group .upload-area {
+    background-color: white;
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.icon-upload-group .upload-area:hover {
+    border-color: #52AC8C;
+}
+
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.upload-icon {
+    color: #9ca3af;
+    margin-bottom: 8px;
+}
+
+.upload-text {
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+}
+
+.upload-hint {
+    font-size: 12px;
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Status Toggle */
+.status-group {
+    background-color: white;
+    padding: 16px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.status-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-label {
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.status-desc {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #52AC8C;
+}
+
+input:check:checked+.slider:before {
+    transform: translateX(22px);
+}
+
+/* Actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancel {
+    background-color: white;
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.btn-cancel:hover {
+    background-color: #f3f4f6;
+}
+
+.btn-save {
+    background-color: #52AC8C;
+    border: none;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #429f7f;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    color: #9ca3af;
+    font-size: 12px;
+    padding-top: 20px;
+    border-top: 1px solid #d1d5db;
+}
+
+.footer-copy {
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+}

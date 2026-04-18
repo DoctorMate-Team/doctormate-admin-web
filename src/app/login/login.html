@@ -23,20 +23,43 @@
           <p class="subtitle">Sign in to access the control panel</p>
         </div>
 
-        <form class="login-form" (ngSubmit)="onSubmit()">
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" [(ngModel)]="email" class="form-input" />
+            <label for="email">Email Address / Phone</label>
+            <input type="text" id="email" formControlName="emailOrPhone" 
+                class="form-input" 
+                [ngClass]="{'error-input': loginForm.get('emailOrPhone')?.invalid && loginForm.get('emailOrPhone')?.touched}"
+                placeholder="Enter email or phone" />
+            @if (loginForm.get('emailOrPhone')?.invalid && loginForm.get('emailOrPhone')?.touched) {
+              <span class="error-text" style="color: #ef4444; font-size: 12px; margin-top: 4px; display: block;">Valid email/phone is required</span>
+            }
           </div>
 
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" [(ngModel)]="password"
-              placeholder="Enter your password" class="form-input" />
+            <input type="password" id="password" formControlName="password"
+              placeholder="Enter your password" class="form-input" 
+              [ngClass]="{'error-input': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}" />
+            @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+              <span class="error-text" style="color: #ef4444; font-size: 12px; margin-top: 4px; display: block;">Password must be at least 6 characters</span>
+            }
           </div>
 
-          <button type="submit" class="login-btn">
-            Login
+          @if (errorMessage()) {
+            <div class="toast error-toast" style="background:#fef2f2; border:1px solid #fecaca; color:#ef4444; padding:10px 14px; border-radius:8px; display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>{{ errorMessage() }}</span>
+            </div>
+          }
+
+          <button type="submit" class="login-btn" [disabled]="isLoading()" [ngStyle]="{'opacity': isLoading() ? '0.7' : '1'}">
+            @if (isLoading()) {
+              <div class="spinner" style="width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+            } @else {
+              <span>Login Request</span>
+            }
           </button>
         </form>
 

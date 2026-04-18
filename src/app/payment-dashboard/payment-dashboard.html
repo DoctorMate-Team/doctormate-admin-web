@@ -1,0 +1,308 @@
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-section">
+            <div class="logo-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" />
+                </svg>
+            </div>
+            <span class="logo-text">DoctorMate</span>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-item" routerLink="/overview-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Overview</span>
+            </div>
+            <div class="nav-item" routerLink="/user-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                <span>User</span>
+            </div>
+
+            <div class="nav-item active" routerLink="/payment-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                <span>Payment</span>
+            </div>
+            <div class="nav-item" routerLink="/logs-dashboard">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <span>Logs</span>
+            </div>
+        </nav>
+
+
+        <div class="sidebar-bottom">
+            <div class="nav-item logout" routerLink="/login">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Logout</span>
+            </div>
+            <div class="nav-item settings">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+                <span>Settings</span>
+            </div>
+            <div class="user-profile-sidebar">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="avatar-img">
+                <div class="user-info-sidebar">
+                    <span class="user-name">Hazem Wagih</span>
+                    <span class="user-email">emilly.watson@example.com</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="header">
+            <div class="header-title">
+                <h1>Payment Transaction</h1>
+                <p>Manage and track all payment transactions</p>
+            </div>
+            <div class="header-actions">
+                <div class="search-bar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Search transaction..">
+                </div>
+                <button class="btn btn-export">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    Export
+                </button>
+                <button class="btn btn-filter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    Filter
+                </button>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            @if (paymentService.summaryLoading()) {
+                <div class="stat-card skeleton" style="height: 100px;"></div>
+                <div class="stat-card skeleton" style="height: 100px;"></div>
+                <div class="stat-card skeleton" style="height: 100px;"></div>
+                <div class="stat-card skeleton" style="height: 100px;"></div>
+            } @else if (paymentService.summaryError()) {
+                <div style="grid-column: span 4; color: red;">{{ paymentService.summaryError() }}</div>
+            } @else if (paymentService.summaryData(); as summary) {
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <span class="stat-label">Total Revenue</span>
+                        <h2 class="stat-value">{{ summary.totalRevenue | currency:'USD' }}</h2>
+                        <span class="stat-change positive">+12.5% from last month</span>
+                    </div>
+                    <div class="stat-icon revenue-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <span class="stat-label">Monthly Revenue</span>
+                        <h2 class="stat-value">{{ summary.monthlyRevenue | currency:'USD' }}</h2>
+                        <span class="stat-change positive">+8.2% from last month</span>
+                    </div>
+                    <div class="stat-icon transactions-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                            <line x1="2" y1="10" x2="22" y2="10"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <span class="stat-label">Pending Amount</span>
+                        <h2 class="stat-value">{{ summary.pendingAmount | currency:'USD' }}</h2>
+                        <span class="stat-change positive">+2.1% from last month</span>
+                    </div>
+                    <div class="stat-icon success-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                            <polyline points="16 7 22 7 22 13"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <span class="stat-label">Transactions</span>
+                        <h2 class="stat-value">{{ (summary?.totalTransactions || 0) | number }}</h2>
+                        <span class="stat-change" [ngClass]="(summary?.successRate || 0) > 90 ? 'positive' : 'negative'">{{ summary?.successRate || 0 }}% Success Rate</span>
+                    </div>
+                    <div class="stat-icon avg-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Scrollable Container for Table -->
+        <div class="table-scroll-container">
+            <div class="table-container">
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>TRANSACTION ID</th>
+                            <th>USER NAME</th>
+                            <th>User Role</th>
+                            <th>AMOUNT</th>
+                            <th>Payment Method</th>
+                            <th>DATE</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (paymentService.paymentsLoading()) {
+                            @for (item of [1,2,3,4,5]; track item) {
+                                <tr>
+                                    <td colspan="8"><div class="skeleton" style="height:40px;"></div></td>
+                                </tr>
+                            }
+                        } @else if (paymentService.paymentsError()) {
+                            <tr>
+                                <td colspan="8" style="text-align:center; color:#ef4444; padding:20px;">
+                                    {{ paymentService.paymentsError() }}
+                                </td>
+                            </tr>
+                        } @else {
+                            @for (payment of paymentService.paymentsData(); track payment.id) {
+                                <tr>
+                                    <td>{{ payment.transactionId || payment.id || 'N/A' }}</td>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div style="width:32px; height:32px; border-radius:50%; background:#e2e8f0; display:flex; align-items:center; justify-content:center; font-weight:bold; color:#64748b; margin-right: 12px; font-size: 14px;">
+                                                {{ (payment.patientName || payment.doctorName || 'U')[0] | uppercase }}
+                                            </div>
+                                            <span>{{ payment.patientName || payment.doctorName || 'Unknown User' }}</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="role-badge" [ngClass]="payment.patientName ? 'patient' : 'doctor'">{{ payment.patientName ? 'Patient' : 'Doctor' }}</span></td>
+                                    <td>{{ (payment.amount || 0) | currency: payment.currency || 'USD' }}</td>
+                                    <td>
+                                        <div class="method-cell">
+                                            <span>{{ payment.paymentMethod || 'Credit Card' }}</span>
+                                        </div>
+                                    </td>
+                                    <td>{{ payment.createdAt | date:'mediumDate' }}</td>
+                                    <td>
+                                        <span class="status-badge"
+                                              [ngClass]="{
+                                                'success': payment.status === 'Completed' || payment.status === 'Refunded',
+                                                'failed': payment.status === 'Failed',
+                                                'pending': payment.status === 'Pending'
+                                              }">
+                                            {{ payment.status }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <button style="background:#52AC8C; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:12px; font-weight:500;" (click)="viewDetails(payment.id)">
+                                            View Details
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                <div class="table-footer">
+                    <span>Showing 1-10 of 2,847 users</span>
+                    <div class="pagination">
+                        <button class="btn-page">Previous</button>
+                        <button class="btn-page active">1</button>
+                        <button class="btn-page">2</button>
+                        <button class="btn-page">3</button>
+                        <button class="btn-page">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-copy">2024 HEALTHCARE ADMIN PORTAL | V 2.4.0</div>
+            <div class="footer-links">
+                <a href="#">PRIVACY POLICY</a>
+                <a href="#">SYSTEM HEALTH STATUS</a>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Payment Details Modal -->
+    @if (isModalOpen()) {
+        <div class="modal-overlay" (click)="closeModal()">
+            <div class="modal-content" (click)="$event.stopPropagation()">
+                <div class="modal-header">
+                    <h2>Transaction Details</h2>
+                    <button class="close-btn" (click)="closeModal()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    @if (paymentService.paymentDetailsLoading()) {
+                        <div class="skeleton" style="height: 20px; width: 80%; margin-bottom: 10px;"></div>
+                        <div class="skeleton" style="height: 20px; width: 60%; margin-bottom: 10px;"></div>
+                        <div class="skeleton" style="height: 20px; width: 70%; margin-bottom: 10px;"></div>
+                        <div class="skeleton" style="height: 20px; width: 50%; margin-bottom: 10px;"></div>
+                    } @else if (paymentService.paymentDetailsError()) {
+                        <div style="color: red; text-align: center;">{{ paymentService.paymentDetailsError() }}</div>
+                    } @else if (paymentService.selectedPayment(); as detail) {
+                        <p><strong>Transaction ID:</strong> {{ detail.transactionId || detail.id }}</p>
+                        <p><strong>Date:</strong> {{ detail.createdAt | date:'medium' }}</p>
+                        <p><strong>Amount:</strong> {{ detail.amount | currency: detail.currency || 'USD' }}</p>
+                        <p><strong>Status:</strong> 
+                            <span class="status-badge" [ngClass]="{
+                                'success': detail.status === 'Completed' || detail.status === 'Refunded',
+                                'failed': detail.status === 'Failed',
+                                'pending': detail.status === 'Pending'
+                            }">{{ detail.status }}</span>
+                        </p>
+                        <hr style="border:0; border-top:1px solid #e2e8f0; margin:15px 0;">
+                        <p><strong>Method:</strong> {{ detail.paymentMethod }}</p>
+                        <p><strong>Doctor:</strong> {{ detail.doctorName }}</p>
+                        <p><strong>Patient:</strong> {{ detail.patientName }}</p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
