@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, inject, signal, effect } from '@angular/core';
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { PaymentService } from '../core/services/payment.service';
@@ -13,8 +13,17 @@ import { PaymentService } from '../core/services/payment.service';
 export class PaymentDashboard implements OnInit {
   public paymentService = inject(PaymentService);
   
+  payments: any[] = [];
+
   // For Modal
   isModalOpen = signal(false);
+
+  constructor() {
+    effect(() => {
+      this.payments = this.paymentService.paymentsData();
+      console.log('Payments Data:', this.payments);
+    });
+  }
 
   ngOnInit() {
     this.paymentService.fetchPaymentsSummary();

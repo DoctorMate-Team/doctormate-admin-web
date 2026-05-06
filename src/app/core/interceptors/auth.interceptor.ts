@@ -21,13 +21,19 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const rawToken = localStorage.getItem('token');
   if (rawToken) {
     const cleanToken = rawToken.replace(/['"]+/g, '').trim();
-    console.log('[Interceptor] Clean Token:', cleanToken);
-    authReq = authReq.clone({
-      setHeaders: {
-        'Authorization': `Bearer ${cleanToken}`,
-        'Accept': 'application/json'
-      }
-    });
+    if (!cleanToken) {
+      console.error('[Interceptor] ⚠️ Token exists in localStorage but is EMPTY after cleaning!');
+    } else {
+      console.log('[Interceptor] ✅ Token attached:', cleanToken.substring(0, 30) + '...');
+      authReq = authReq.clone({
+        setHeaders: {
+          'Authorization': `Bearer ${cleanToken}`,
+          'Accept': 'application/json'
+        }
+      });
+    }
+  } else {
+    console.warn('[Interceptor] ⚠️ NO TOKEN FOUND in localStorage! Request will be sent without Authorization header.');
   }
 
   console.log(`[Interceptor] Full URL: ${authReq.url}`);

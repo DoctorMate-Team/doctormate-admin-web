@@ -16,10 +16,10 @@ export class LogsDashboard implements OnInit {
   private route = inject(ActivatedRoute);
   private router = inject(Router);
 
-  logs = signal<Log[]>([]);
+  logs: any[] = [];
   totalCount = signal(0);
   currentPage = signal(1);
-  pageSize = signal(10);
+  pageSize = signal(50);
   loading = signal(false);
 
   totalPages = computed(() => {
@@ -46,13 +46,25 @@ export class LogsDashboard implements OnInit {
     this.loading.set(true);
     this.logService.getLogs(this.currentPage(), this.pageSize()).subscribe({
       next: (res) => {
-        if (res && res.data) {
-          this.logs.set(res.data.items || []);
-          this.totalCount.set(res.data.totalCount || 0);
+        console.log('[LogsDashboard] subscribe next - received:', res);
+        console.log('[LogsDashboard] Is Array?', Array.isArray(res));
+        console.log('[LogsDashboard] Length:', Array.isArray(res) ? res.length : 'N/A');
+
+        if (res && Array.isArray(res) && res.length > 0) {
+          this.logs = res;
+          this.totalCount.set(res.length);
+        } else if (res && res.items && res.items.length > 0) {
+          this.logs = res.items;
+          this.totalCount.set(res.totalCount || res.items.length);
+        } else {
+          console.warn('[LogsDashboard] Received empty or null logs array.');
+          this.logs = [];
+          this.totalCount.set(0);
         }
         this.loading.set(false);
       },
-      error: () => {
+      error: (err) => {
+        console.error('[LogsDashboard] Error loading logs:', err);
         this.loading.set(false);
       }
     });

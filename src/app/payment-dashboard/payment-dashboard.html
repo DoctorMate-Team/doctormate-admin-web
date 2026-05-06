@@ -201,7 +201,7 @@
                                 </td>
                             </tr>
                         } @else {
-                            @for (payment of paymentService.paymentsData(); track payment.id) {
+                            @for (payment of payments; track payment.transactionId || $index) {
                                 <tr>
                                     <td>{{ payment.transactionId || payment.id || 'N/A' }}</td>
                                     <td>
