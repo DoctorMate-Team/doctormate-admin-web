@@ -143,10 +143,10 @@
                 <tbody>
                     @if (loading()) {
                         <tr><td colspan="4" class="text-center">Loading logs...</td></tr>
-                    } @else if (logs().length === 0) {
+                    } @else if (logs.length === 0) {
                         <tr><td colspan="4" class="text-center">No logs found.</td></tr>
                     } @else {
-                        @for (log of logs(); track log.id) {
+                        @for (log of logs; track log.id || $index) {
                             <tr>
                                 <td>
                                     <span class="log-badge" [ngClass]="log.level">

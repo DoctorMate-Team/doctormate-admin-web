@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment';
 })
 export class UserService {
   private http = inject(HttpClient);
-  private baseUrl = `${environment.apiUrl}/api/Admin/Users`;
+  private baseUrl = `${environment.apiUrl}/api/admin/users`;
 
   // Users List Signals
   usersData = signal<PaginatedUsers | null>(null);
@@ -23,30 +23,43 @@ export class UserService {
   userDetailsLoading = signal<boolean>(false);
   userDetailsError = signal<string | null>(null);
 
-  fetchUsers(page: number = 0) {
+  fetchUsers(page: number = 1, limit: number = 10, role?: string, isActive?: boolean | string) {
     this.usersLoading.set(true);
     this.usersError.set(null);
 
-    const params = new HttpParams().set('page', page.toString());
+    let params = new HttpParams()
+      .set('page', page.toString())
+      .set('limit', limit.toString());
+
+    if (role) {
+      params = params.set('role', role);
+    }
+    if (isActive !== undefined) {
+      params = params.set('isActive', isActive.toString());
+    }
+
+    const fullUrl = `${this.baseUrl}?page=${page}&limit=${limit}`;
+    console.log('[UserService] Fetching:', fullUrl);
 
     this.http.get<any>(this.baseUrl, { params }).pipe(
-      map((res: any) => res.data),
-      tap(rawData => {
-        if (Array.isArray(rawData)) {
-          this.usersData.set({
-            content: rawData,
-            totalElements: rawData.length,
-            totalPages: 1,
-            size: rawData.length,
-            number: 0,
-            first: true,
-            last: true,
-            empty: rawData.length === 0,
-            pageable: { pageNumber: 0, pageSize: 20 }
-          });
-        } else {
-          this.usersData.set(rawData as PaginatedUsers);
-        }
+      map((res: any) => {
+        console.log('[UserService] Raw response:', res);
+        const users = res?.data?.users ?? res?.data ?? [];
+        console.log('[UserService] Extracted users array:', users);
+        return Array.isArray(users) ? users : [];
+      }),
+      tap(usersArray => {
+        this.usersData.set({
+          content: usersArray,
+          totalElements: usersArray.length,
+          totalPages: Math.ceil(usersArray.length / limit) || 1,
+          size: limit,
+          number: page,
+          first: page === 1,
+          last: usersArray.length < limit,
+          empty: usersArray.length === 0,
+          pageable: { pageNumber: page, pageSize: limit }
+        });
         this.usersLoading.set(false);
       }),
       catchError(err => {

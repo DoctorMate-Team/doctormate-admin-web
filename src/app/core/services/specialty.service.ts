@@ -10,20 +10,21 @@ import { environment } from '../../../environments/environment';
 })
 export class SpecialtyService {
   private http = inject(HttpClient);
-  private baseUrl = `${environment.apiUrl}/api/Admin/Specialties`;
+  private baseUrl = `${environment.apiUrl}/api/admin/specialties`;
 
   // State Signals
   specialtiesData = signal<Specialty[]>([]);
   isLoading = signal(false);
   errorMsg = signal<string | null>(null);
 
-  getAllSpecialties(): Observable<any> {
+  getAllSpecialties(page: number = 1, limit: number = 100, includeInactive: boolean = true): Observable<any> {
     this.isLoading.set(true);
     this.errorMsg.set(null);
-    return this.http.get<any>(this.baseUrl).pipe(
+    return this.http.get<any>(`${this.baseUrl}?page=${page}&limit=${limit}&includeInactive=${includeInactive}`).pipe(
       map((res: any) => res.data),
       tap(data => {
-        this.specialtiesData.set(data || []);
+        const items = data?.items || data || [];
+        this.specialtiesData.set(items);
         this.isLoading.set(false);
       }),
       catchError(err => {

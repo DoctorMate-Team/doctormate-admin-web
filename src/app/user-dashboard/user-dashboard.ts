@@ -34,7 +34,7 @@ export class UserDashboard implements OnInit {
   isModalOpen = signal(false);
 
   ngOnInit() {
-    this.loadPage(0);
+    this.loadPage(1);
   }
 
   loadPage(page: number) {

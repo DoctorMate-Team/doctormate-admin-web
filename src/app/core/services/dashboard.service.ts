@@ -10,8 +10,8 @@ import { environment } from '../../../environments/environment';
 })
 export class DashboardService {
   private http = inject(HttpClient);
-  private overviewUrl = `${environment.apiUrl}/api/Admin/Overview`;
-  private healthUrl = `${environment.apiUrl}/api/Admin/SystemHealth`;
+  private overviewUrl = `${environment.apiUrl}/api/admin/dashboard/overview`;
+  private healthUrl = `${environment.apiUrl}/api/admin/dashboard/system-health`;
 
   // Overview signals
   overviewData = signal<DashboardOverview | null>(null);
